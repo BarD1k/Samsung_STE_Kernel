@@ -29,7 +29,7 @@
 #include <mach/db8500-regs.h>
 	 
 
-#define PRCMU_DPI_CLK_FREQ	49920000
+#define PRCMU_DPI_CLK_FREQ	66560000
 	 
 #ifdef CONFIG_FB_MCDE
 
@@ -133,8 +133,8 @@ struct ssg_dpi_display_platform_data janice_dpi_pri_display_info = {
 	.video_mode.xres	= 480, 
 	.video_mode.yres	= 800,
 	.video_mode.hsw		= 2,
-	.video_mode.hbp		= 3,
-	.video_mode.hfp		= 3,
+	.video_mode.hbp		= 16 - 2,	/* -2 to allow for starting at end of hsw not start of hsw */
+	.video_mode.hfp		= 16,
 	.video_mode.vsw		= 2,
 	.video_mode.vbp		= 3 - 2,	/* -2 to allow for starting at end of vsw not start of vsw */
 	.video_mode.vfp		= 28,
