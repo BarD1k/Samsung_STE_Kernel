@@ -60,7 +60,6 @@ void *return_address(unsigned int level)
 
 /*
 void *return_address(unsigned int level)
-
 {
 	return NULL;
 }
